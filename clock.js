@@ -15,7 +15,7 @@ window.onload = function(){
         clockContainer.innerHTML = getCurrentDateTime();
     }, 1000);
 
-    // e on ise määratud muutuja nimi
+    // e on ise mï¿½ï¿½ratud muutuja nimi
     window.addEventListener("keypress", function(e){
         console.log(e);
 
@@ -41,6 +41,16 @@ window.onload = function(){
             clockDiv.className = "big";
         }
     });
+	
+	    window.addEventListener('click', function(){
+        var clockDiv = document.getElementById('clock');
+        console.log(clockDiv);
+        if(clockDiv.className == "big"){
+            clockDiv.className = "small";
+        }else{
+            clockDiv.className = "big";
+        }
+    });
 };
 
 var getCurrentDateTime = function(){
@@ -49,7 +59,7 @@ var getCurrentDateTime = function(){
     var hours = currentDate.getHours();
     var minutes = currentDate.getMinutes();
     var seconds = currentDate.getSeconds();
-	
+
 	var year = currentDate.getFullYear();
 	var month = new Array();
     month[0] = "January";
@@ -99,13 +109,3 @@ function addAuthor(name){
 
     document.body.appendChild(p);
 }
-
-function myFunction() {
-    document.body.style.backgroundColor = "red";
-}
-
-/*
-for(var i = 0; i < links.length; i++){
- 	links[i].href = "#";
-}
-*/
