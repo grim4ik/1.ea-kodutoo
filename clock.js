@@ -42,15 +42,8 @@ window.onload = function(){
         }
     });
 	
-	    window.addEventListener('click', function(){
-        var clockDiv = document.getElementById('clock');
-        console.log(clockDiv);
-        if(clockDiv.className == "big"){
-            clockDiv.className = "small";
-        }else{
-            clockDiv.className = "big";
-        }
-    });
+	document.getElementById("changeColor").addEventListener('click', changeColor);
+	document.getElementById("resetColor").addEventListener('click', resetColor);
 };
 
 var getCurrentDateTime = function(){
@@ -108,4 +101,24 @@ function addAuthor(name){
     p.appendChild(last);
 
     document.body.appendChild(p);
+}
+
+function changeColor(){
+
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    document.getElementById("clock").style.color = color;
+
+}
+
+function resetColor(){
+
+    
+    var color = '#FFFFFF';
+    
+    document.getElementById("clock").style.color = color;
+
 }
